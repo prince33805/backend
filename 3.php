@@ -151,6 +151,8 @@ function is_fruit(array $f,$n){
 // array size 7 n=[1,14329]
 // array size 14 n=[1,28658]
 
+
+
 // test here , please test 1 by 1 
 // is_fruit(['a','b'],186);
 // is_fruit(['a','b','c'],436);
