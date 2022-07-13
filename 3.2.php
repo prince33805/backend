@@ -143,10 +143,7 @@ function is_fruit(array $f,$n){
 
 
 //test pass with 5 array and 0<n<10235
-// <<<<<<< HEAD
 is_fruit(['a','b','c','d','e'],15);
 // is_fruit(['a','b','c','d','e'],10235);
-// =======
 is_fruit(['a','b','c','d','e'],31);
 // is_fruit(['a','b','c','d','e'],10235);
-// >>>>>>> d42908000c39c737a7abb7928e9ff49d6b2a767b
