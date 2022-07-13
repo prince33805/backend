@@ -154,7 +154,7 @@ function is_fruit(array $f,$n){
 
 
 // test here , please test 1 by 1 
-// is_fruit(['a','b'],186);
+is_fruit(['a','b'],186);
 // is_fruit(['a','b','c'],436);
 // is_fruit(['a','b','c','d'],656);
 // is_fruit(['a','b','c','d','e'],10235);
