@@ -1,42 +1,61 @@
 <?php
 class Company {
     // Properties
-    public $name;
-    public $address;
-
-    public function __construct($name,$address){
-        $this->name = $name;
-        $this->address = $address;
-    }
+    static public $companyName = "asdasdasdasdsadasdasd";
+    static public $address = "11111";
     
     // Methods
-    function set_name($name) {
-        $this->name = $name;
+    public function __construct($companyName,$address){
+        $this->companyName = $companyName;
+        $this->address = $address;
     }
-    function get_name() {
-        return $this->name;
+
+    function showData(){
+        echo "Company Name: " . $this->get_companyName();
+        echo "\n";
+        echo "Company Address: " . $this->get_address();
+        echo "\n";
     }
+    function set_companyName($companyName) {
+        $this->companyName = $companyName;
+    }
+
+    function get_companyName() {
+        return $this->companyName;
+    }
+
     function set_address($address) {
         $this->address = $address;
     }
+
     function get_address() {
         return $this->address;
     }
+
 }
 
-class Developer extends Company {
-    
+class Developer extends Employee {
+    function __construct($name,$age,$phone,$role)
+    {
+        parent::__construct($name,$age,$phone,"Developer",$role);
+    }
 }
 
-class Graphic extends Company {
-    
+class Graphic extends Employee {
+    function __construct($name,$age,$phone,$role)
+    {
+        parent::__construct($name,$age,$phone,"Graphic",$role);
+    }
 }
 
-class Reception extends Company {
-    
+class Reception extends Employee {
+    function __construct($name,$age,$phone,$role)
+    {
+        parent::__construct($name,$age,$phone,"Reception",$role);
+    }
 }
 
-class Employee {
+class Employee extends Company{
     // Properties
     public $name;
     public $age;
@@ -83,31 +102,27 @@ class Employee {
     function get_role() {
         return $this->role;
     }
-
+    function showData(){
+        echo "Company Name: " . Company::$companyName;
+        echo "\n";
+        echo "Company Address : " . Company::$address;
+        echo "\n";
+        echo "Employee Name: " . $this->get_name();
+        echo "\n";
+        echo "Employee Department: " . $this->get_department();
+        echo "\n";
+        echo "Employee Phone: " . $this->get_phone();
+        echo "\n";
+        echo "Employee Role: " . $this->get_role();
+        echo "\n";
+    }
 }
 
+$employee = new Developer("nameee",22,"1234567890","roleeee");
+$employee->showData();
 
-
-
-
-$company1 = new Company("aaa","123");
-echo "Company Name: " . $company1->get_name();
-echo "\n";
-echo "Company Address: " . $company1->get_address();
-echo "\n";
-
-$employee = new Employee("nameee",22,"1234567890","deppp","roleeee");
 // $employee->set_name("Name2");
 // $employee->set_age(11);
 // $employee->set_phone("1234567899");
-// $employee->set_department("asdasd");
 // $employee->set_role("a");
-echo "Name: " . $employee->get_name();
-echo "\n";
-echo "age: " . $employee->get_age();
-echo "\n";
-echo "phone: " . $employee->get_phone();
-echo "\n";
-echo "Dep: " . $employee->get_department();
-echo "\n";
-echo "role: " . $employee->get_role();
+// $employee->showData();
